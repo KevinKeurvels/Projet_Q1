@@ -13,6 +13,14 @@ let pseudoJ2={
 let mine={};
 let playerEnCours;
 
+
+/**
+ * recupPseudo va prendre les données rentrer dans le formulaire et les mets dans des objets et on enleve le formulaire du body et on appelle la fonction création du tableau de jeu et on appelle la fonction placer mine pour commencer
+ *
+ * @param {Object} form contient la valeur du formulaire qui contient les pseudo et le nombre de mines et on initialise les mines restantes pour les joueurs
+ * @return {boolean} retourne toujours false car on veut pas le formulaire
+ */
+
 function recupPseudo(form){
     pseudoJ1.name = form.nameJoueur1.value;
     pseudoJ2.name = form.nameJoueur2.value;
@@ -32,6 +40,12 @@ function recupPseudo(form){
     return false;
 }
 
+
+/**
+ * tableauCreation va créer le tableau va s'adapter en fonction de si la partie a commencé ou pas
+ *
+ * @param {number} commencer dit si la partie à commencer (si 0)
+ */
 function tableauCreation(commencer){
     let nbCollumn=0;
     let nbLine=0;
